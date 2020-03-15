@@ -6,7 +6,7 @@
 </head>
 
   <meta charset="utf-8">
-  <body style="backgrund-color:#0b172a; color:black;">
+  <body style="backgrund-color:white; color:black;">
   
   <h1>
 	       
@@ -15,136 +15,6 @@
 <h3>Sanjay Kumar Thakur</h3>
 
 
-
-My Suggestion: I suggest you all to try to hack this site (Hack The Box) your self, if you not able to do, use this article.
-
-First of all, some intro about myself:
-
-I am Sanjay Kumar Thakur, a Full Stack Developer on .Net (C#). I develop website, web application, and ERP software etc. 
-Visit my site to know more about me: www.arwdtech.com 
-or 
-https://github.com/sanjkrthk
-
-Can contact me for contract work : sanjaycisc@gmail.com
-
-
-What is Hack The Box ?
-
-Actually it is an online platform to test and advance your skills in penetration testing in the field of cyber security.
-
-Let’s try our way in…..!
-
-
-
-			This is Hack The Box Website.
-
-
-1. At first, you have to visit Hack the Box site.
-
-2. You have to go on https://www.hackthebox.eu/invite to join Hack The Box.
-
-3. When you go to that page, you can see the box asking you for an invite code.
-
-4. Now open here inspect element. Right click on the page, and open inspect element. Or use the keys, press Ctrl+Shift+I to open the Chrome Developers Tools. In Mac OSX, use the keys, press Alt+Command+I to open the Safari Developers Tools.
-
-5. Go through the elements tab and you will find a script with source as: /js/inviteapi.min.js
-
-	       
-	       
-	       
-	     
-		You can See the script src: /js/inviteapi.min.js
-
-
-
-6. Now, go to https://www.hackthebox.eu/js/inviteapi.min.js . You will see a JS file like this.
-
-
-
-	       
-
-Here you can see the highlighted makeInviteCode
-
-7. You can makeInviteCode looks interesting. So let’s go back to https://www.hackthebox.eu/invite and try to find its contents.
-
-
-8. Goto console tab in Safari/Chrome Developer Tools, and type makeInviteCode() and press ENTER. You will get a 200 Success status and data as shown below.
-
-	
-	       
-	       
-	       Type makeInviteCode() and press ENTER
-
-
-	       
-
-
-
-9. When you click the small arrow alongside data, you will see the encoding type to be Base64.
-
-
-	       
-	       
-	       
-	       
-		You can see the message in data.
-
-
-
-10. Now you have to decode that message. Copy the contents of data.
-
-	       
-	       
- 
-For decryption you have to use offline tools or online tools. You can search online for a Base64 Decryption. You can use Google search result. I used google search’s result:- https://www.base64decode.org/
-
-	       
-11. Paste the copied data onto the text box and click DECODE. You will get something like below.
-
-	       
-	       
-
-
-12. So, in order to generate an invite code, you need to make a POST request to https://www.hackthebox.eu/api/invite/generate.
-
-13. Fire up your terminal. And make a POST request by typing:
-
-Or copy which has given below and paste on your terminal (Windows os / Mac osx). You can see the picture.
-
-curl -XPOST https://www.hackthebox.eu/api/invite/generate
-
-14. You will get a success message as:
-
-
-	       
-	       
-	       
-
-15. As you saw, we code a code. But this is not our invite code as it says encoded.
-
-Now you have to decode the code.
-
-
-16. Lets’s try decoding this, by again using https://www.base64decode.org/.
-
-
-17. Paste the code you got as the response the POST request into the box. You get your invite code. Look down in the box, code is decoded.
-
-	       
-	       
-	       
-	       
-	       
-	       
-				You get your invite code
-
-18. Now, you have to go https://www.hackthebox.eu/invite and paste the Invite Code you got in the text box asking for the same.
- 
-19. Congratulation You did it! Now you can Register/ sign-up on Hack the Box site, after register you become a member.
-
-
-
-<b><center>!** All the best Happy Hacking**!</b></center>
   
   </body>
   </html>
